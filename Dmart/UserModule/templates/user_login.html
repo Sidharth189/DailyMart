@@ -1,0 +1,28 @@
+{% extends 'user_reg.html' %}
+
+{% block content %}
+
+<form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <div class="input-group">
+        <input class="input--style-2" type="text" placeholder="Username" name="username">
+    </div>
+    <div class="row row-space">
+        <div class="col-2">
+            <div class="input-group">
+                <input class="input--style-2" type="password" placeholder="Password" name="password">
+            </div>
+        </div>
+    </div>
+    <div class="p-t-30">
+        <button class="btn btn--radius btn--green" type="submit">Submit</button>
+    </div>
+    <div class="p-t-30">
+        <p>{{msg}}</p>
+    </div>
+    <div class="p-t-30">
+        <a href="{% url 'userreg' %}">New user? Sign in </a>
+    </div>
+</form>
+
+{% endblock %}
